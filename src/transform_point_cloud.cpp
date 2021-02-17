@@ -54,8 +54,6 @@ int main (int argc, char** argv){
     tf2_ros::Buffer tfBuffer;
     tf2_ros::TransformListener tfListener(tfBuffer);
 
-    // This could all probably go inside the callback and just use ros::spin
-    ros::Rate rate(5);
     while (nh.ok()){
 
         try {
@@ -66,7 +64,6 @@ int main (int argc, char** argv){
         }
 
         ros::spinOnce();
-        rate.sleep();
     }
 
     return 0;
